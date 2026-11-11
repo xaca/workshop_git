@@ -269,29 +269,6 @@ club.enroll_student(status=<span class="text-emerald-400">"Active"</span>)
         </div>
     </section>
 
-    <!-- Integrantes / Equipo Section -->
-    <section id="integrantes" class="py-20 bg-upb-dark relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs font-semibold uppercase tracking-widest text-red-500 mb-2">Comunidad Académica</h2>
-                <p class="font-heading text-3xl sm:text-4xl font-extrabold text-white">Integrantes del Club</p>
-                <p class="mt-4 text-gray-400 text-sm sm:text-base">
-                    Estudiantes y miembros destacados comprometidos con el desarrollo de la Inteligencia Artificial en la UPB.
-                </p>
-            </div>
-
-            <!-- List / Grid of Members -->
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <!-- Member 1: Andrés -->
-                <div class="bg-upb-card border border-gray-800 rounded-2xl p-6 text-center hover:border-red-500/40 transition-all duration-300 group">
-                    <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-red-900/60 to-gray-900 border-2 border-red-500/40 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
-                        <i class="fa-solid fa-user-astronaut text-3xl text-red-400"></i>
-                    </div>
-                    <h3 class="font-heading text-xl font-bold text-white">Andrés</h3>
-                    <p class="text-xs text-red-400 font-medium mb-3">Líder del Semillero & ML Engineer</p>
-                    <p class="text-gray-400 text-xs leading-relaxed mb-4">
-                        Enfocado en arquitecturas de aprendizaje profundo y optimización de modelos computacionales.
-                    </p>
     <!-- Integrantes / Team Section -->
     <section id="integrantes" class="py-20 bg-gray-950/60 border-t border-gray-800/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -301,142 +278,158 @@ club.enroll_student(status=<span class="text-emerald-400">"Active"</span>)
                 <p class="mt-4 text-gray-400 text-sm sm:text-base">Estudiantes e investigadores apasionados que lideran el desarrollo de la IA en la Universidad Pontificia Bolivariana.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Member 1: Andres -->
-                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 text-center group">
-                    <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-tr from-upb-red to-red-600 p-1 mb-4 shadow-lg group-hover:scale-105 transition-transform">
-                        <div class="w-full h-full rounded-full bg-gray-900 flex items-center justify-center text-red-400">
-                            <i class="fa-solid fa-user-astronaut text-2xl"></i>
+                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 text-center group flex flex-col justify-between">
+                    <div>
+                        <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-tr from-upb-red to-red-600 p-1 mb-4 shadow-lg group-hover:scale-105 transition-transform">
+                            <div class="w-full h-full rounded-full bg-gray-900 flex items-center justify-center text-red-400">
+                                <i class="fa-solid fa-user-astronaut text-2xl"></i>
+                            </div>
                         </div>
+                        <h3 class="font-heading text-lg font-bold text-white mb-1">Andrés</h3>
+                        <p class="text-[11px] font-semibold text-red-400 uppercase tracking-wider mb-2">Investigación en LLMs</p>
+                        <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                            Modelos de lenguaje natural, arquitecturas RAG y fine-tuning académico.
+                        </p>
                     </div>
-                    <h3 class="font-heading text-lg font-bold text-white mb-1">Andrés</h3>
-                    <p class="text-[11px] font-semibold text-red-400 uppercase tracking-wider mb-2">Investigación en LLMs</p>
-                    <p class="text-gray-400 text-xs leading-relaxed mb-4">
-                        Modelos de lenguaje natural, arquitecturas RAG y fine-tuning académico.
-                    </p>
-                    <div class="flex justify-center space-x-3 text-gray-400 text-xs">
+                    <div class="flex justify-center space-x-3 text-gray-400 text-xs pt-2">
                         <a href="#" class="hover:text-red-500 transition-colors"><i class="fa-brands fa-github"></i></a>
                         <a href="#" class="hover:text-red-500 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
                     </div>
                 </div>
 
                 <!-- Member 2: Ferney -->
-                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 text-center group">
-                    <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-tr from-upb-red to-red-600 p-1 mb-4 shadow-lg group-hover:scale-105 transition-transform">
-                        <div class="w-full h-full rounded-full bg-gray-900 flex items-center justify-center text-red-400">
-                            <i class="fa-solid fa-brain text-2xl"></i>
+                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 text-center group flex flex-col justify-between">
+                    <div>
+                        <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-tr from-upb-red to-red-600 p-1 mb-4 shadow-lg group-hover:scale-105 transition-transform">
+                            <div class="w-full h-full rounded-full bg-gray-900 flex items-center justify-center text-red-400">
+                                <i class="fa-solid fa-brain text-2xl"></i>
+                            </div>
                         </div>
+                        <h3 class="font-heading text-lg font-bold text-white mb-1">Ferney</h3>
+                        <p class="text-[11px] font-semibold text-red-400 uppercase tracking-wider mb-2">MLOps & Infraestructura</p>
+                        <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                            Desarrollo PyTorch, contenedores Docker y cómputo GPU acelerado.
+                        </p>
                     </div>
-                    <h3 class="font-heading text-lg font-bold text-white mb-1">Ferney</h3>
-                    <p class="text-[11px] font-semibold text-red-400 uppercase tracking-wider mb-2">MLOps & Infraestructura</p>
-                    <p class="text-gray-400 text-xs leading-relaxed mb-4">
-                        Desarrollo PyTorch, contenedores Docker y cómputo GPU acelerado.
-                    </p>
-                    <div class="flex justify-center space-x-3 text-gray-400 text-xs">
+                    <div class="flex justify-center space-x-3 text-gray-400 text-xs pt-2">
                         <a href="#" class="hover:text-red-500 transition-colors"><i class="fa-brands fa-github"></i></a>
                         <a href="#" class="hover:text-red-500 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
                     </div>
                 </div>
 
                 <!-- Member 3: Angelica -->
-                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 text-center group">
-                    <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-tr from-upb-red to-red-600 p-1 mb-4 shadow-lg group-hover:scale-105 transition-transform">
-                        <div class="w-full h-full rounded-full bg-gray-900 flex items-center justify-center text-red-400">
-                            <i class="fa-solid fa-eye text-2xl"></i>
+                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 text-center group flex flex-col justify-between">
+                    <div>
+                        <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-tr from-upb-red to-red-600 p-1 mb-4 shadow-lg group-hover:scale-105 transition-transform">
+                            <div class="w-full h-full rounded-full bg-gray-900 flex items-center justify-center text-red-400">
+                                <i class="fa-solid fa-eye text-2xl"></i>
+                            </div>
                         </div>
+                        <h3 class="font-heading text-lg font-bold text-white mb-1">Angélica</h3>
+                        <p class="text-[11px] font-semibold text-red-400 uppercase tracking-wider mb-2">Visión por Computador</p>
+                        <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                            Segmentación semántica y detección de objetos con OpenCV y YOLO.
+                        </p>
                     </div>
-                    <h3 class="font-heading text-lg font-bold text-white mb-1">Angélica</h3>
-                    <p class="text-[11px] font-semibold text-red-400 uppercase tracking-wider mb-2">Visión por Computador</p>
-                    <p class="text-gray-400 text-xs leading-relaxed mb-4">
-                        Segmentación semántica y detección de objetos con OpenCV y YOLO.
-                    </p>
-                    <div class="flex justify-center space-x-3 text-gray-400 text-xs">
+                    <div class="flex justify-center space-x-3 text-gray-400 text-xs pt-2">
                         <a href="#" class="hover:text-red-500 transition-colors"><i class="fa-brands fa-github"></i></a>
                         <a href="#" class="hover:text-red-500 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
                     </div>
                 </div>
 
                 <!-- Placeholder 1: Miembro Vacante / Integrante 4 -->
-                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 text-center group">
-                    <div class="w-20 h-20 mx-auto rounded-full bg-gray-800 border-2 border-dashed border-red-500/50 p-1 mb-4 flex items-center justify-center group-hover:scale-105 transition-transform">
-                        <div class="w-full h-full rounded-full bg-gray-900/80 flex items-center justify-center text-gray-400">
-                            <i class="fa-solid fa-code text-2xl text-red-400"></i>
+                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 text-center group flex flex-col justify-between">
+                    <div>
+                        <div class="w-20 h-20 mx-auto rounded-full bg-gray-800 border-2 border-dashed border-red-500/50 p-1 mb-4 flex items-center justify-center group-hover:scale-105 transition-transform">
+                            <div class="w-full h-full rounded-full bg-gray-900/80 flex items-center justify-center text-gray-400">
+                                <i class="fa-solid fa-code text-2xl text-red-400"></i>
+                            </div>
                         </div>
+                        <h3 class="font-heading text-lg font-bold text-white mb-1">Integrante Por Asignar</h3>
+                        <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-2">Procesamiento de Voz & Audio</p>
+                        <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                            Modelos de reconocimiento de habla (Whisper) y síntesis de audio inteligente.
+                        </p>
                     </div>
-                    <h3 class="font-heading text-lg font-bold text-white mb-1">Integrante Por Asignar</h3>
-                    <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-2">Procesamiento de Voz & Audio</p>
-                    <p class="text-gray-400 text-xs leading-relaxed mb-4">
-                        Modelos de reconocimiento de habla (Whisper) y síntesis de audio inteligente.
-                    </p>
-                    <div class="flex justify-center space-x-3 text-gray-500 text-xs">
+                    <div class="flex justify-center space-x-3 text-gray-500 text-xs pt-2">
                         <span class="inline-flex items-center px-2 py-0.5 rounded bg-gray-800 text-[10px] text-red-300 border border-red-900/50">Cupo Disponible</span>
                     </div>
                 </div>
 
                 <!-- Placeholder 2: Integrante 5 -->
-                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 text-center group">
-                    <div class="w-20 h-20 mx-auto rounded-full bg-gray-800 border-2 border-dashed border-red-500/50 p-1 mb-4 flex items-center justify-center group-hover:scale-105 transition-transform">
-                        <div class="w-full h-full rounded-full bg-gray-900/80 flex items-center justify-center text-gray-400">
-                            <i class="fa-solid fa-chart-line text-2xl text-red-400"></i>
+                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 text-center group flex flex-col justify-between">
+                    <div>
+                        <div class="w-20 h-20 mx-auto rounded-full bg-gray-800 border-2 border-dashed border-red-500/50 p-1 mb-4 flex items-center justify-center group-hover:scale-105 transition-transform">
+                            <div class="w-full h-full rounded-full bg-gray-900/80 flex items-center justify-center text-gray-400">
+                                <i class="fa-solid fa-chart-line text-2xl text-red-400"></i>
+                            </div>
                         </div>
+                        <h3 class="font-heading text-lg font-bold text-white mb-1">Integrante Por Asignar</h3>
+                        <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-2">IA en Finanzas & Datos</p>
+                        <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                            Predicción de series temporales, análisis cualitativo y finanzas cuantitativas.
+                        </p>
                     </div>
-                    <h3 class="font-heading text-lg font-bold text-white mb-1">Integrante Por Asignar</h3>
-                    <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-2">IA en Finanzas & Datos</p>
-                    <p class="text-gray-400 text-xs leading-relaxed mb-4">
-                        Predicción de series temporales, análisis cualitativo y finanzas cuantitativas.
-                    </p>
-                    <div class="flex justify-center space-x-3 text-gray-500 text-xs">
+                    <div class="flex justify-center space-x-3 text-gray-500 text-xs pt-2">
                         <span class="inline-flex items-center px-2 py-0.5 rounded bg-gray-800 text-[10px] text-red-300 border border-red-900/50">Cupo Disponible</span>
                     </div>
                 </div>
 
                 <!-- Placeholder 3: Integrante 6 -->
-                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 text-center group">
-                    <div class="w-20 h-20 mx-auto rounded-full bg-gray-800 border-2 border-dashed border-red-500/50 p-1 mb-4 flex items-center justify-center group-hover:scale-105 transition-transform">
-                        <div class="w-full h-full rounded-full bg-gray-900/80 flex items-center justify-center text-gray-400">
-                            <i class="fa-solid fa-microchip text-2xl text-red-400"></i>
+                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 text-center group flex flex-col justify-between">
+                    <div>
+                        <div class="w-20 h-20 mx-auto rounded-full bg-gray-800 border-2 border-dashed border-red-500/50 p-1 mb-4 flex items-center justify-center group-hover:scale-105 transition-transform">
+                            <div class="w-full h-full rounded-full bg-gray-900/80 flex items-center justify-center text-gray-400">
+                                <i class="fa-solid fa-microchip text-2xl text-red-400"></i>
+                            </div>
                         </div>
+                        <h3 class="font-heading text-lg font-bold text-white mb-1">Integrante Por Asignar</h3>
+                        <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-2">Robótica & AI Edge</p>
+                        <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                            Implementación de IA en microcontroladores (TinyML) y robótica autónoma.
+                        </p>
                     </div>
-                    <h3 class="font-heading text-lg font-bold text-white mb-1">Integrante Por Asignar</h3>
-                    <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-2">Robótica & AI Edge</p>
-                    <p class="text-gray-400 text-xs leading-relaxed mb-4">
-                        Implementación de IA en microcontroladores (TinyML) y robótica autónoma.
-                    </p>
-                    <div class="flex justify-center space-x-3 text-gray-500 text-xs">
+                    <div class="flex justify-center space-x-3 text-gray-500 text-xs pt-2">
                         <span class="inline-flex items-center px-2 py-0.5 rounded bg-gray-800 text-[10px] text-red-300 border border-red-900/50">Cupo Disponible</span>
                     </div>
                 </div>
 
                 <!-- Placeholder 4: Integrante 7 -->
-                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 text-center group">
-                    <div class="w-20 h-20 mx-auto rounded-full bg-gray-800 border-2 border-dashed border-red-500/50 p-1 mb-4 flex items-center justify-center group-hover:scale-105 transition-transform">
-                        <div class="w-full h-full rounded-full bg-gray-900/80 flex items-center justify-center text-gray-400">
-                            <i class="fa-solid fa-scale-balanced text-2xl text-red-400"></i>
+                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 text-center group flex flex-col justify-between">
+                    <div>
+                        <div class="w-20 h-20 mx-auto rounded-full bg-gray-800 border-2 border-dashed border-red-500/50 p-1 mb-4 flex items-center justify-center group-hover:scale-105 transition-transform">
+                            <div class="w-full h-full rounded-full bg-gray-900/80 flex items-center justify-center text-gray-400">
+                                <i class="fa-solid fa-scale-balanced text-2xl text-red-400"></i>
+                            </div>
                         </div>
+                        <h3 class="font-heading text-lg font-bold text-white mb-1">Integrante Por Asignar</h3>
+                        <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-2">Ética & Gobernanza de IA</p>
+                        <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                            Evaluación de sesgos algorítmicos, transparencia e impacto ético-social.
+                        </p>
                     </div>
-                    <h3 class="font-heading text-lg font-bold text-white mb-1">Integrante Por Asignar</h3>
-                    <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-2">Ética & Gobernanza de IA</p>
-                    <p class="text-gray-400 text-xs leading-relaxed mb-4">
-                        Evaluación de sesgos algorítmicos, transparencia e impacto ético-social.
-                    </p>
-                    <div class="flex justify-center space-x-3 text-gray-500 text-xs">
+                    <div class="flex justify-center space-x-3 text-gray-500 text-xs pt-2">
                         <span class="inline-flex items-center px-2 py-0.5 rounded bg-gray-800 text-[10px] text-red-300 border border-red-900/50">Cupo Disponible</span>
                     </div>
                 </div>
 
                 <!-- Placeholder 5: Integrante 8 -->
-                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 text-center group">
-                    <div class="w-20 h-20 mx-auto rounded-full bg-gray-800 border-2 border-dashed border-red-500/50 p-1 mb-4 flex items-center justify-center group-hover:scale-105 transition-transform">
-                        <div class="w-full h-full rounded-full bg-gray-900/80 flex items-center justify-center text-gray-400">
-                            <i class="fa-solid fa-wand-magic-sparkles text-2xl text-red-400"></i>
+                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 text-center group flex flex-col justify-between">
+                    <div>
+                        <div class="w-20 h-20 mx-auto rounded-full bg-gray-800 border-2 border-dashed border-red-500/50 p-1 mb-4 flex items-center justify-center group-hover:scale-105 transition-transform">
+                            <div class="w-full h-full rounded-full bg-gray-900/80 flex items-center justify-center text-gray-400">
+                                <i class="fa-solid fa-wand-magic-sparkles text-2xl text-red-400"></i>
+                            </div>
                         </div>
+                        <h3 class="font-heading text-lg font-bold text-white mb-1">Integrante Por Asignar</h3>
+                        <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-2">IA Generativa & Arte Digital</p>
+                        <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                            Modelos de difusión, síntesis multimodal y herramientas de creatividad asistida.
+                        </p>
                     </div>
-                    <h3 class="font-heading text-lg font-bold text-white mb-1">Integrante Por Asignar</h3>
-                    <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-2">IA Generativa & Arte Digital</p>
-                    <p class="text-gray-400 text-xs leading-relaxed mb-4">
-                        Modelos de difusión, síntesis multimoda y herramientas de creatividad asistida.
-                    </p>
-                    <div class="flex justify-center space-x-3 text-gray-500 text-xs">
+                    <div class="flex justify-center space-x-3 text-gray-500 text-xs pt-2">
                         <span class="inline-flex items-center px-2 py-0.5 rounded bg-gray-800 text-[10px] text-red-300 border border-red-900/50">Cupo Disponible</span>
                     </div>
                 </div>
