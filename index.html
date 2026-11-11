@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club de Inteligencia Artificial - UPB</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        upb: {
+                            red: '#990000',
+                            darkred: '#700000',
+                            gold: '#D4AF37',
+                            dark: '#0B0F19',
+                            card: '#111827',
+                            border: '#1F2937'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #FFFFFF 30%, #EF4444 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-upb {
+            background: linear-gradient(135deg, #990000 0%, #450000 100%);
+        }
+        .glow-effect {
+            box-shadow: 0 0 25px -5px rgba(153, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-upb-dark text-gray-100 font-sans antialiased selection:bg-upb-red selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-gray-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & Brand -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl gradient-upb flex items-center justify-center shadow-lg border border-red-500/30">
+                        <i class="fa-solid fa-brain text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-heading font-extrabold text-xl tracking-tight text-white block leading-none">AI CLUB <span class="text-upb-red">UPB</span></span>
+                        <span class="text-[10px] text-gray-400 font-medium tracking-wider uppercase">Universidad Pontificia Bolivariana</span>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-300">
+                    <a href="#inicio" class="hover:text-red-500 transition-colors">Inicio</a>
+                    <a href="#acerca" class="hover:text-red-500 transition-colors">Nosotros</a>
+                    <a href="#temario" class="hover:text-red-500 transition-colors">Módulos</a>
+                    <a href="#horarios" class="hover:text-red-500 transition-colors">Ubicación</a>
+                    <a href="#faqs" class="hover:text-red-500 transition-colors">Preguntas</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden sm:block">
+                    <a href="#inscripcion" class="gradient-upb hover:brightness-125 text-white text-sm font-semibold px-5 py-2.5 rounded-lg shadow-lg border border-red-500/40 transition-all duration-200 inline-flex items-center space-x-2">
+                        <span>Unirse al Club</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-400 hover:text-white focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-t border-gray-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-upb-red/20 hover:text-white">Inicio</a>
+            <a href="#acerca" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-upb-red/20 hover:text-white">Nosotros</a>
+            <a href="#temario" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-upb-red/20 hover:text-white">Módulos</a>
+            <a href="#horarios" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-upb-red/20 hover:text-white">Ubicación</a>
+            <a href="#faqs" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-upb-red/20 hover:text-white">Preguntas</a>
+            <a href="#inscripcion" class="mobile-link block text-center gradient-upb text-white font-semibold px-4 py-2.5 rounded-lg shadow-lg">Inscribirme Ahora</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+        <!-- Ambient Glow -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-upb-red/20 rounded-full blur-[140px] -z-10 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-upb-red/10 border border-upb-red/30 text-red-400 text-xs font-semibold uppercase tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                        <span>Semillero de Investigación & Formación 2026</span>
+                    </div>
+
+                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none text-white">
+                        Construye el futuro de la <span class="gradient-text">Inteligencia Artificial</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+                        El semillero y club tecnológico definitivo para estudiantes de la Universidad Pontificia Bolivariana. Domina Deep Learning, visión por computador, modelos de lenguaje y aplicaciones reales.
+                    </p>
+
+                    <!-- Key stats / highlights -->
+                    <div class="pt-2 grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0">
+                        <div class="p-3 rounded-xl bg-gray-900/60 border border-gray-800 text-center">
+                            <span class="block text-2xl font-bold font-heading text-white">100%</span>
+                            <span class="text-xs text-gray-400">Práctico</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-gray-900/60 border border-gray-800 text-center">
+                            <span class="block text-2xl font-bold font-heading text-red-400">12</span>
+                            <span class="text-xs text-gray-400">Semanas</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-gray-900/60 border border-gray-800 text-center">
+                            <span class="block text-2xl font-bold font-heading text-white">UPB</span>
+                            <span class="text-xs text-gray-400">Certificado</span>
+                        </div>
+                    </div>
+
+                    <!-- Hero Action Buttons -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#inscripcion" class="w-full sm:w-auto gradient-upb hover:brightness-125 text-white font-semibold px-8 py-4 rounded-xl shadow-xl hover:shadow-red-900/30 transition-all duration-200 text-center flex items-center justify-center space-x-3 glow-effect">
+                            <i class="fa-solid fa-user-plus text-sm"></i>
+                            <span>Inscribirme al Curso</span>
+                        </a>
+                        <a href="#temario" class="w-full sm:w-auto bg-gray-900 hover:bg-gray-800 text-gray-300 font-semibold px-6 py-4 rounded-xl border border-gray-800 transition-all duration-200 text-center flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-list-check text-sm text-red-500"></i>
+                            <span>Ver Plan de Estudios</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Code/Graphic Visual -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative rounded-2xl bg-upb-card border border-gray-800 p-6 shadow-2xl">
+                        <!-- Window Dots -->
+                        <div class="flex items-center justify-between pb-4 border-b border-gray-800/80 mb-4">
+                            <div class="flex space-x-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                            </div>
+                            <span class="text-xs text-gray-500 font-mono">upb_ai_club.py</span>
+                        </div>
+                        <!-- Snippet -->
+                        <pre class="font-mono text-xs sm:text-sm text-gray-300 leading-relaxed overflow-x-auto">
+<span class="text-purple-400">import</span> torch
+<span class="text-purple-400">from</span> upb_ai <span class="text-purple-400">import</span> AcademicClub
+
+<span class="text-gray-500"># Inicializar club académico UPB</span>
+club = AcademicClub(
+    university=<span class="text-emerald-400">"UPB Medellín"</span>,
+    level=<span class="text-emerald-400">"Advanced AI & ML"</span>
+)
+
+<span class="text-purple-400">def</span> <span class="text-blue-400">desarrollar_talento</span>(estudiante):
+    model = club.load_knowledge()
+    skills = [<span class="text-emerald-400">"LLMs"</span>, <span class="text-emerald-400">"Vision"</span>, <span class="text-emerald-400">"Robotics"</span>]
+    <span class="text-purple-400">return</span> model.train(estudiante, skills)
+
+<span class="text-gray-500"># ¡Postúlate hoy mismo!</span>
+club.enroll_student(status=<span class="text-emerald-400">"Active"</span>)
+</pre>
+                        <!-- Badge inside card -->
+                        <div class="mt-6 pt-4 border-t border-gray-800 flex items-center justify-between text-xs text-gray-400">
+                            <span class="flex items-center space-x-2">
+                                <i class="fa-solid fa-microchip text-red-500"></i>
+                                <span>PyTorch & Transformers</span>
+                            </span>
+                            <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-check text-xs mr-1"></i>Cupos Abiertos</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="acerca" class="py-20 bg-gray-950/60 border-y border-gray-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-red-500 mb-2">Propósito del Club</h2>
+                <p class="font-heading text-3xl sm:text-4xl font-extrabold text-white">Impulsando el ecosistema de IA en la UPB</p>
+                <p class="mt-4 text-gray-400 text-sm sm:text-base leading-relaxed">
+                    Un espacio diseñado por y para la comunidad universitaria para aprender, investigar y crear soluciones basadas en inteligencia artificial aplicada a desafíos del mundo real.
+                </p>
+            </div>
+
+            <!-- 4 Pillars Cards Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Pillar 1 -->
+                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-red-950/50 border border-red-500/30 flex items-center justify-center text-red-400 mb-5 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-robot text-xl"></i>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-white mb-2">Machine Learning</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+                        Fundamentos sólidos de aprendizaje supervisado, no supervisado y regresiones aplicadas.
+                    </p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-red-950/50 border border-red-500/30 flex items-center justify-center text-red-400 mb-5 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-network-wired text-xl"></i>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-white mb-2">Redes Neuronales</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+                        Arquitectura de Deep Learning con PyTorch y TensorFlow para problemas complejos.
+                    </p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-red-950/50 border border-red-500/30 flex items-center justify-center text-red-400 mb-5 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-eye text-xl"></i>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-white mb-2">Visión por Computador</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+                        Procesamiento de imágenes, detección de objetos con YOLO y segmentación semántica.
+                    </p>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-red-950/50 border border-red-500/30 flex items-center justify-center text-red-400 mb-5 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-comments text-xl"></i>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-white mb-2">IA Generativa & LLMs</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+                        Fine-tuning de modelos Transformers, sistemas RAG y agentes de inteligencia artificial.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules / Curriculum Section -->
+    <section id="temario" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-red-500 mb-2">Estructura Académica</h2>
+                <p class="font-heading text-3xl sm:text-4xl font-extrabold text-white">Módulos del Curso</p>
+                <p class="mt-4 text-gray-400 text-sm sm:text-base">Un plan de estudio estructurado secuencialmente para garantizar tu crecimiento continuo.</p>
+            </div>
+
+            <!-- Tabbed / Cards Layout -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Module 1 -->
+                <div class="bg-upb-card rounded-2xl border border-gray-800 overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold text-red-400 bg-red-950/70 border border-red-800/40 px-3 py-1 rounded-full">Módulo 01</span>
+                            <span class="text-xs text-gray-500"><i class="fa-regular fa-clock mr-1"></i>Semanas 1-3</span>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-white mb-3">Fundamentos & Math for AI</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Repaso intensivo de álgebra lineal, cálculo multivariable, probabilidad y Python para análisis de datos con NumPy y Pandas.
+                        </p>
+                        <ul class="space-y-2 text-xs text-gray-300">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-red-500 mr-2"></i>Álgebra Matricial aplicada</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-red-500 mr-2"></i>Optimización por Descenso de Gradiente</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-red-500 mr-2"></i>Entorno de trabajo con Jupyter & Google Colab</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="bg-upb-card rounded-2xl border border-gray-800 overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold text-red-400 bg-red-950/70 border border-red-800/40 px-3 py-1 rounded-full">Módulo 02</span>
+                            <span class="text-xs text-gray-500"><i class="fa-regular fa-clock mr-1"></i>Semanas 4-6</span>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-white mb-3">Deep Learning & PyTorch</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Construcción de redes neuronales profundas (DNN), funciones de activación, regularización y entrenamiento acelerado por GPU.
+                        </p>
+                        <ul class="space-y-2 text-xs text-gray-300">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-red-500 mr-2"></i>Perceptrón Multicapa (MLP)</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-red-500 mr-2"></i>Backpropagation desde cero</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-red-500 mr-2"></i>Framework PyTorch avanzado</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="bg-upb-card rounded-2xl border border-gray-800 overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold text-red-400 bg-red-950/70 border border-red-800/40 px-3 py-1 rounded-full">Módulo 03</span>
+                            <span class="text-xs text-gray-500"><i class="fa-regular fa-clock mr-1"></i>Semanas 7-8</span>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-white mb-3">Computer Vision (CV)</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Redes Neuronales Convolucionales (CNNs), transferencia de aprendizaje y modelos de detección e inteligencia visual en tiempo real.
+                        </p>
+                        <ul class="space-y-2 text-xs text-gray-300">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-red-500 mr-2"></i>Arquitecturas ResNet y EfficientNet</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-red-500 mr-2"></i>OpenCV & YOLOv8</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-red-500 mr-2"></i>Segmentación de imágenes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Module 4 -->
+                <div class="bg-upb-card rounded-2xl border border-gray-800 overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold text-red-400 bg-red-950/70 border border-red-800/40 px-3 py-1 rounded-full">Módulo 04</span>
+                            <span class="text-xs text-gray-500"><i class="fa-regular fa-clock mr-1"></i>Semanas 9-10</span>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-white mb-3">NLP & Large Language Models</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Comprensión del lenguaje natural, arquitectura Transformers, Self-Attention y desarrollo de aplicaciones con LLMs.
+                        </p>
+                        <ul class="space-y-2 text-xs text-gray-300">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-red-500 mr-2"></i>Tokenización y Embeddings</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-red-500 mr-2"></i>Hugging Face & LangChain</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-red-500 mr-2"></i>Sistemas RAG (Retrieval-Augmented Gen)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Module 5 -->
+                <div class="bg-upb-card rounded-2xl border border-gray-800 overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between md:col-span-2 lg:col-span-2">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold text-red-400 bg-red-950/70 border border-red-800/40 px-3 py-1 rounded-full">Módulo 05</span>
+                            <span class="text-xs text-gray-500"><i class="fa-regular fa-clock mr-1"></i>Semanas 11-12</span>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-white mb-3">Proyecto Capstone & MLOps</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Despliegue de modelos en producción, creación de APIs con FastAPI, contenedores Docker y presentación ante el comité académico de la UPB.
+                        </p>
+                        <div class="grid sm:grid-cols-2 gap-2 text-xs text-gray-300">
+                            <div class="flex items-center"><i class="fa-solid fa-check text-red-500 mr-2"></i>Deployment en Vercel / AWS</div>
+                            <div class="flex items-center"><i class="fa-solid fa-check text-red-500 mr-2"></i>Pitching de Proyectos</div>
+                            <div class="flex items-center"><i class="fa-solid fa-check text-red-500 mr-2"></i>CI/CD para Machine Learning</div>
+                            <div class="flex items-center"><i class="fa-solid fa-check text-red-500 mr-2"></i>Certificado de aprobación</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule & Location Section -->
+    <section id="horarios" class="py-20 bg-gray-950/60 border-t border-gray-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-10 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <h2 class="text-xs font-semibold uppercase tracking-widest text-red-500 mb-2">Logística Presencial</h2>
+                        <p class="font-heading text-3xl font-extrabold text-white">Horarios y Ubicación</p>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Las clases y talleres del club se realizan de manera presencial en el Campus Laureles de la UPB, contando con equipos de alto rendimiento.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4 p-4 rounded-xl bg-upb-card border border-gray-800">
+                            <div class="w-10 h-10 rounded-lg bg-red-950/60 border border-red-500/30 flex items-center justify-center text-red-400 shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm">Lugar</h4>
+                                <p class="text-gray-400 text-xs mt-0.5">Campus Laureles - Bloque 11 / Laboratorio de Informática 302</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-4 rounded-xl bg-upb-card border border-gray-800">
+                            <div class="w-10 h-10 rounded-lg bg-red-950/60 border border-red-500/30 flex items-center justify-center text-red-400 shrink-0">
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm">Horario</h4>
+                                <p class="text-gray-400 text-xs mt-0.5">Miércoles: 4:00 PM - 6:00 PM | Sábados: 10:00 AM - 12:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-4 rounded-xl bg-upb-card border border-gray-800">
+                            <div class="w-10 h-10 rounded-lg bg-red-950/60 border border-red-500/30 flex items-center justify-center text-red-400 shrink-0">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm">Dirigido a</h4>
+                                <p class="text-gray-400 text-xs mt-0.5">Estudiantes de Pregrado y Posgrado UPB (Todas las facultades)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Map / Graphic Card -->
+                <div class="lg:col-span-7">
+                    <div class="rounded-2xl bg-upb-card border border-gray-800 p-6 relative overflow-hidden">
+                        <div class="flex items-center justify-between pb-4 mb-4 border-b border-gray-800">
+                            <span class="text-sm font-semibold text-white"><i class="fa-solid fa-building-columns text-red-500 mr-2"></i>Campus Laureles, Medellín</span>
+                            <span class="text-xs text-gray-400">UPB Colombia</span>
+                        </div>
+                        
+                        <div class="bg-gray-900 rounded-xl p-8 text-center border border-gray-800/80 space-y-4">
+                            <div class="w-16 h-16 mx-auto rounded-full bg-red-900/30 border border-red-500/40 flex items-center justify-center text-red-500">
+                                <i class="fa-solid fa-map-location-dot text-2xl"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">Laboratorio de Inteligencia Artificial & Robótica</h3>
+                            <p class="text-xs text-gray-400 max-w-md mx-auto">
+                                Equipado con GPUs NVIDIA RTX, acceso a cluster académico y estaciones de desarrollo dedicadas para los miembros del club.
+                            </p>
+                            <div class="inline-flex items-center space-x-2 text-xs text-emerald-400 bg-emerald-950/50 px-3 py-1.5 rounded-full border border-emerald-800/40">
+                                <i class="fa-solid fa-wifi"></i>
+                                <span>Red de Alta Velocidad UPB Garantizada</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section id="inscripcion" class="py-20 relative">
+        <!-- Glow -->
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-upb-red/10 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-upb-card border border-gray-800 rounded-3xl p-6 sm:p-10 shadow-2xl relative">
+                
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-red-500">Formulario de Postulación</span>
+                    <h2 class="font-heading text-3xl font-extrabold text-white mt-1">Inscríbete al Club de IA</h2>
+                    <p class="text-gray-400 text-sm mt-2">Completa tus datos para reservar tu cupo en el semestre académico actual.</p>
+                </div>
+
+                <!-- Alert Message Box (Hidden by default) -->
+                <div id="form-alert" class="hidden mb-6 p-4 rounded-xl bg-emerald-950/80 border border-emerald-500/50 text-emerald-300 text-sm text-center">
+                    <i class="fa-solid fa-circle-check mr-2"></i>
+                    <span>¡Postulación enviada con éxito! Te contactaremos a tu correo institucional UPB.</span>
+                </div>
+
+                <form id="registration-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <!-- Full Name -->
+                        <div>
+                            <label class="block text-xs font-medium text-gray-300 mb-2">Nombre Completo *</label>
+                            <input type="text" required placeholder="Ej. Mateo Valencia" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-red-500 transition-colors">
+                        </div>
+                        <!-- Student ID / ID -->
+                        <div>
+                            <label class="block text-xs font-medium text-gray-300 mb-2">ID Estudiantil / Cédula *</label>
+                            <input type="text" required placeholder="000123456" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-red-500 transition-colors">
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <!-- UPB Email -->
+                        <div>
+                            <label class="block text-xs font-medium text-gray-300 mb-2">Correo Institucional (@upb.edu.co) *</label>
+                            <input type="email" required placeholder="usuario@upb.edu.co" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-red-500 transition-colors">
+                        </div>
+                        <!-- Academic Faculty / Program -->
+                        <div>
+                            <label class="block text-xs font-medium text-gray-300 mb-2">Carrera / Programa Académico *</label>
+                            <input type="text" required placeholder="Ej. Ing. de Sistemas, Diseño, Medicina..." class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-red-500 transition-colors">
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <!-- Academic Semester -->
+                        <div>
+                            <label class="block text-xs font-medium text-gray-300 mb-2">Semestre Actual *</label>
+                            <select required class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-red-500 transition-colors">
+                                <option value="" disabled selected>Selecciona tu semestre</option>
+                                <option value="1-3">1° - 3° Semestre</option>
+                                <option value="4-6">4° - 6° Semestre</option>
+                                <option value="7-10">7° - 10° Semestre</option>
+                                <option value="posgrado">Posgrado / Maestría</option>
+                            </select>
+                        </div>
+                        <!-- Programming Level -->
+                        <div>
+                            <label class="block text-xs font-medium text-gray-300 mb-2">Nivel en Python / Programación *</label>
+                            <select required class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-red-500 transition-colors">
+                                <option value="" disabled selected>Selecciona tu nivel</option>
+                                <option value="principiante">Principiante (Sin experiencia previa)</option>
+                                <option value="intermedio">Intermedio (Conozco sintaxis básica)</option>
+                                <option value="avanzado">Avanzado (Desarrollo proyectos en Python)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Motivation -->
+                    <div>
+                        <label class="block text-xs font-medium text-gray-300 mb-2">¿Por qué quieres unirte al AI Club UPB?</label>
+                        <textarea rows="3" placeholder="Cuéntanos brevemente tus metas o intereses..." class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-red-500 transition-colors resize-none"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full gradient-upb hover:brightness-125 text-white font-bold py-4 rounded-xl shadow-xl hover:shadow-red-900/40 transition-all duration-200 flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-paper-plane text-sm"></i>
+                        <span>Enviar Postulación</span>
+                    </button>
+
+                    <p class="text-center text-xs text-gray-500">
+                        * Cupos limitados por capacidad de laboratorio. Selección sujeta a confirmación por correo.
+                    </p>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section id="faqs" class="py-20 bg-gray-950/60 border-t border-gray-800/60">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-red-500 mb-2">Resolvemos tus dudas</h2>
+                <p class="font-heading text-3xl font-extrabold text-white">Preguntas Frecuentes</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="bg-upb-card border border-gray-800 rounded-xl p-5">
+                    <h4 class="text-white font-semibold text-base mb-2 flex items-center">
+                        <i class="fa-solid fa-circle-question text-red-500 mr-3"></i>
+                        ¿El club tiene algún costo de inscripción?
+                    </h4>
+                    <p class="text-gray-400 text-sm pl-7">
+                        No. El AI Club UPB es una iniciativa totalmente gratuita respaldada por la Universidad Pontificia Bolivariana para sus estudiantes activos.
+                    </p>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-upb-card border border-gray-800 rounded-xl p-5">
+                    <h4 class="text-white font-semibold text-base mb-2 flex items-center">
+                        <i class="fa-solid fa-circle-question text-red-500 mr-3"></i>
+                        ¿Necesito ser estudiante de Ingeniería de Sistemas?
+                    </h4>
+                    <p class="text-gray-400 text-sm pl-7">
+                        No. El club es interdisciplinario y recibe a estudiantes de cualquier facultad (Diseño, Medicina, Administración, Derecho, etc.) apasionados por la tecnología.
+                    </p>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="bg-upb-card border border-gray-800 rounded-xl p-5">
+                    <h4 class="text-white font-semibold text-base mb-2 flex items-center">
+                        <i class="fa-solid fa-circle-question text-red-500 mr-3"></i>
+                        ¿Se entrega certificado al finalizar?
+                    </h4>
+                    <p class="text-gray-400 text-sm pl-7">
+                        Sí, se otorga una certificación de participación respaldada por la facultad tras cumplir con el 80% de asistencia y la entrega del proyecto capstone final.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-upb-dark border-t border-gray-800 py-12 text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 rounded-lg gradient-upb flex items-center justify-center">
+                            <i class="fa-solid fa-brain text-white text-sm"></i>
+                        </div>
+                        <span class="font-heading font-bold text-lg text-white">AI CLUB UPB</span>
+                    </div>
+                    <p class="text-xs text-gray-400 max-w-sm leading-relaxed">
+                        Universidad Pontificia Bolivariana<br>
+                        Circular 1ª 70-01, Campus Laureles<br>
+                        Medellín, Colombia
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-semibold text-xs uppercase tracking-wider mb-3">Navegación</h5>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#inicio" class="hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="#acerca" class="hover:text-white transition-colors">Sobre Nosotros</a></li>
+                        <li><a href="#temario" class="hover:text-white transition-colors">Módulos del Curso</a></li>
+                        <li><a href="#inscripcion" class="hover:text-white transition-colors">Inscripciones</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-semibold text-xs uppercase tracking-wider mb-3">Contacto</h5>
+                    <ul class="space-y-2 text-xs">
+                        <li class="flex items-center"><i class="fa-solid fa-envelope text-red-500 mr-2"></i>aiclub@upb.edu.co</li>
+                        <li class="flex items-center"><i class="fa-solid fa-globe text-red-500 mr-2"></i>www.upb.edu.co</li>
+                        <li class="flex items-center space-x-3 pt-2">
+                            <a href="#" class="w-8 h-8 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center hover:text-white hover:border-red-500 transition-all"><i class="fa-brands fa-github text-xs"></i></a>
+                            <a href="#" class="w-8 h-8 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center hover:text-white hover:border-red-500 transition-all"><i class="fa-brands fa-linkedin text-xs"></i></a>
+                            <a href="#" class="w-8 h-8 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center hover:text-white hover:border-red-500 transition-all"><i class="fa-brands fa-discord text-xs"></i></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-gray-800/60 text-center text-xs text-gray-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>&copy; 2026 AI Club Universidad Pontificia Bolivariana. Todos los derechos reservados.</p>
+                <p class="text-gray-600">Diseñado para la Comunidad Académica UPB</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu & Form Submission -->
+    <script>
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Registration form handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const alertBox = document.getElementById('form-alert');
+            const form = document.getElementById('registration-form');
+
+            // Show confirmation alert
+            alertBox.classList.remove('hidden');
+            form.reset();
+
+            // Smooth scroll to alert
+            alertBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+</body>
+</html>
