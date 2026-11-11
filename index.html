@@ -8,27 +8,30 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Inter & Outfit -->
+    <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        upb: {
-                            red: '#990000',
-                            darkred: '#700000',
-                            gold: '#D4AF37',
-                            dark: '#0B0F19',
-                            card: '#111827',
-                            border: '#1F2937'
-                        }
+                        emeraldBrand: {
+                            50: '#F2FAF5',
+                            100: '#E1F5E8',
+                            200: '#C3ECD2',
+                            500: '#10B981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065F46',
+                            900: '#064E3B'
+                        },
+                        slateDark: '#0F172A',
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
                         heading: ['Outfit', 'sans-serif']
                     }
                 }
@@ -36,54 +39,68 @@
         }
     </script>
     <style>
-        .glass-panel {
-            background: rgba(17, 24, 39, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        .glass-header {
+            background: rgba(244, 249, 245, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
         }
-        .gradient-text {
-            background: linear-gradient(135deg, #FFFFFF 30%, #EF4444 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .emerald-gradient-btn {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
         }
-        .gradient-upb {
-            background: linear-gradient(135deg, #990000 0%, #450000 100%);
+        .emerald-gradient-btn:hover {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
         }
-        .glow-effect {
-            box-shadow: 0 0 25px -5px rgba(153, 0, 0, 0.5);
+        .badge-pill {
+            background-color: #E1F5E8;
+            color: #047857;
+        }
+        .custom-underline {
+            position: relative;
+            display: inline-block;
+        }
+        .custom-underline::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 100%;
+            height: 6px;
+            background-color: #F59E0B;
+            border-radius: 9999px;
+            z-index: -1;
         }
     </style>
 </head>
-<body class="bg-upb-dark text-gray-100 font-sans antialiased selection:bg-upb-red selection:text-white">
+<body class="bg-[#F4F9F5] text-slate-800 font-sans antialiased selection:bg-emerald-500 selection:text-white">
 
     <!-- Header / Navbar -->
-    <header class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-gray-800/80">
+    <header class="fixed top-0 left-0 right-0 z-50 glass-header">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <!-- Logo & Brand -->
                 <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-xl gradient-upb flex items-center justify-center shadow-lg border border-red-500/30">
-                        <i class="fa-solid fa-brain text-white text-xl"></i>
+                    <div class="w-11 h-11 rounded-2xl bg-emerald-600 flex items-center justify-center shadow-md shadow-emerald-600/20 text-white">
+                        <i class="fa-solid fa-brain text-xl"></i>
                     </div>
                     <div>
-                        <span class="font-heading font-extrabold text-xl tracking-tight text-white block leading-none">AI CLUB <span class="text-upb-red">UPB</span></span>
-                        <span class="text-[10px] text-gray-400 font-medium tracking-wider uppercase">Universidad Pontificia Bolivariana</span>
+                        <span class="font-heading font-extrabold text-xl tracking-tight text-slate-900 block leading-none">AI CLUB <span class="text-emerald-600">UPB</span></span>
+                        <span class="text-[10px] text-slate-500 font-semibold tracking-wider uppercase">Univ. Pontificia Bolivariana</span>
                     </div>
                 </div>
 
                 <!-- Navigation Links -->
-                <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-300">
-                    <a href="#inicio" class="hover:text-red-500 transition-colors">Inicio</a>
-                    <a href="#acerca" class="hover:text-red-500 transition-colors">Nosotros</a>
-                    <a href="#temario" class="hover:text-red-500 transition-colors">Módulos</a>
-                    <a href="#integrantes" class="hover:text-red-500 transition-colors">Integrantes</a>
-                    <a href="#horarios" class="hover:text-red-500 transition-colors">Ubicación</a>
-                    <a href="#faqs" class="hover:text-red-500 transition-colors">Preguntas</a>
+                <nav class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600">
+                    <a href="#inicio" class="hover:text-emerald-600 transition-colors">Inicio</a>
+                    <a href="#acerca" class="hover:text-emerald-600 transition-colors">Nosotros</a>
+                    <a href="#temario" class="hover:text-emerald-600 transition-colors">Módulos</a>
+                    <a href="#integrantes" class="hover:text-emerald-600 transition-colors">Integrantes</a>
+                    <a href="#horarios" class="hover:text-emerald-600 transition-colors">Ubicación</a>
+                    <a href="#faqs" class="hover:text-emerald-600 transition-colors">Preguntas</a>
                 </nav>
 
                 <!-- CTA Button -->
                 <div class="hidden sm:block">
-                    <a href="#inscripcion" class="gradient-upb hover:brightness-125 text-white text-sm font-semibold px-5 py-2.5 rounded-lg shadow-lg border border-red-500/40 transition-all duration-200 inline-flex items-center space-x-2">
+                    <a href="#inscripcion" class="emerald-gradient-btn text-white text-sm font-bold px-6 py-3 rounded-full shadow-lg shadow-emerald-600/20 transition-all duration-200 inline-flex items-center space-x-2 transform hover:-translate-y-0.5">
                         <span>Unirse al Club</span>
                         <i class="fa-solid fa-arrow-right text-xs"></i>
                     </a>
@@ -91,114 +108,126 @@
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-400 hover:text-white focus:outline-none p-2">
-                        <i class="fa-solid fa-bars text-xl"></i>
+                    <button id="mobile-menu-btn" class="text-slate-700 hover:text-emerald-600 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
         </div>
 
         <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden glass-panel border-t border-gray-800 px-4 pt-2 pb-6 space-y-3">
-            <a href="#inicio" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-upb-red/20 hover:text-white">Inicio</a>
-            <a href="#acerca" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-upb-red/20 hover:text-white">Nosotros</a>
-            <a href="#integrantes" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-upb-red/20 hover:text-white">Integrantes</a>
-            <a href="#temario" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-upb-red/20 hover:text-white">Módulos</a>
-            <a href="#horarios" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-upb-red/20 hover:text-white">Ubicación</a>
-            <a href="#faqs" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-upb-red/20 hover:text-white">Preguntas</a>
-            <a href="#inscripcion" class="mobile-link block text-center gradient-upb text-white font-semibold px-4 py-2.5 rounded-lg shadow-lg">Inscribirme Ahora</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="mobile-link block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-700">Inicio</a>
+            <a href="#acerca" class="mobile-link block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-700">Nosotros</a>
+            <a href="#integrantes" class="mobile-link block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-700">Integrantes</a>
+            <a href="#temario" class="mobile-link block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-700">Módulos</a>
+            <a href="#horarios" class="mobile-link block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-700">Ubicación</a>
+            <a href="#faqs" class="mobile-link block px-4 py-2.5 rounded-xl text-base font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-700">Preguntas</a>
+            <a href="#inscripcion" class="mobile-link block text-center emerald-gradient-btn text-white font-bold px-4 py-3 rounded-full shadow-md">Unirse al Club</a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="inicio" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
-        <!-- Ambient Glow -->
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-upb-red/20 rounded-full blur-[140px] -z-10 pointer-events-none"></div>
+    <section id="inicio" class="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
+        <!-- Soft Mint Background Shapes -->
+        <div class="absolute top-10 right-10 w-96 h-96 bg-emerald-200/40 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+        <div class="absolute bottom-0 left-10 w-80 h-80 bg-amber-100/50 rounded-full blur-3xl -z-10 pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-12 gap-12 items-center">
                 
                 <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-upb-red/10 border border-upb-red/30 text-red-400 text-xs font-semibold uppercase tracking-wider">
-                        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                    <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full badge-pill text-xs font-bold uppercase tracking-wider shadow-sm">
+                        <i class="fa-solid fa-sparkles text-emerald-600"></i>
                         <span>Semillero de Investigación & Formación 2026</span>
                     </div>
 
-                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none text-white">
-                        Construye el futuro de la <span class="gradient-text">Inteligencia Artificial</span>
+                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-slate-900">
+                        Construye el futuro de la <span class="text-emerald-600 custom-underline">Inteligencia Artificial</span>
                     </h1>
 
-                    <p class="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
-                        El semillero y club tecnológico definitivo para estudiantes de la Universidad Pontificia Bolivariana. Domina Deep Learning, visión por computador, modelos de lenguaje y aplicaciones reales.
+                    <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                        El semillero y club tecnológico definitivo para estudiantes de la Universidad Pontificia Bolivariana. Domina Deep Learning, visión por computador y modelos de lenguaje.
                     </p>
 
                     <!-- Key stats / highlights -->
                     <div class="pt-2 grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0">
-                        <div class="p-3 rounded-xl bg-gray-900/60 border border-gray-800 text-center">
-                            <span class="block text-2xl font-bold font-heading text-white">100%</span>
-                            <span class="text-xs text-gray-400">Práctico</span>
+                        <div class="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm text-center">
+                            <span class="block text-2xl font-extrabold font-heading text-slate-900">100%</span>
+                            <span class="text-xs font-medium text-slate-500">Práctico</span>
                         </div>
-                        <div class="p-3 rounded-xl bg-gray-900/60 border border-gray-800 text-center">
-                            <span class="block text-2xl font-bold font-heading text-red-400">12</span>
-                            <span class="text-xs text-gray-400">Semanas</span>
+                        <div class="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm text-center">
+                            <span class="block text-2xl font-extrabold font-heading text-emerald-600">12</span>
+                            <span class="text-xs font-medium text-slate-500">Semanas</span>
                         </div>
-                        <div class="p-3 rounded-xl bg-gray-900/60 border border-gray-800 text-center">
-                            <span class="block text-2xl font-bold font-heading text-white">UPB</span>
-                            <span class="text-xs text-gray-400">Certificado</span>
+                        <div class="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm text-center">
+                            <span class="block text-2xl font-extrabold font-heading text-slate-900">UPB</span>
+                            <span class="text-xs font-medium text-slate-500">Certificado</span>
                         </div>
                     </div>
 
                     <!-- Hero Action Buttons -->
                     <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                        <a href="#inscripcion" class="w-full sm:w-auto gradient-upb hover:brightness-125 text-white font-semibold px-8 py-4 rounded-xl shadow-xl hover:shadow-red-900/30 transition-all duration-200 text-center flex items-center justify-center space-x-3 glow-effect">
+                        <a href="#inscripcion" class="w-full sm:w-auto emerald-gradient-btn text-white font-bold px-8 py-4 rounded-full shadow-lg shadow-emerald-600/25 transition-all duration-200 text-center flex items-center justify-center space-x-3 transform hover:-translate-y-0.5">
                             <i class="fa-solid fa-user-plus text-sm"></i>
                             <span>Inscribirme al Curso</span>
                         </a>
-                        <a href="#temario" class="w-full sm:w-auto bg-gray-900 hover:bg-gray-800 text-gray-300 font-semibold px-6 py-4 rounded-xl border border-gray-800 transition-all duration-200 text-center flex items-center justify-center space-x-2">
-                            <i class="fa-solid fa-list-check text-sm text-red-500"></i>
+                        <a href="#temario" class="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-700 font-bold px-7 py-4 rounded-full border border-slate-200 shadow-sm transition-all duration-200 text-center flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-list-check text-sm text-emerald-600"></i>
                             <span>Ver Plan de Estudios</span>
                         </a>
                     </div>
                 </div>
 
-                <!-- Hero Code/Graphic Visual -->
+                <!-- Hero Code/Graphic Card -->
                 <div class="lg:col-span-5 relative">
-                    <div class="relative rounded-2xl bg-upb-card border border-gray-800 p-6 shadow-2xl">
+                    <!-- Floating Pill Badge -->
+                    <div class="absolute -top-6 -left-4 z-20 bg-white border border-slate-200 rounded-2xl px-4 py-3 shadow-xl flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600">
+                            <i class="fa-solid fa-laptop-code text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs text-slate-400 font-bold">PROYECTO FINAL</span>
+                            <span class="text-sm font-extrabold text-slate-800">IA en Vivo</span>
+                        </div>
+                    </div>
+
+                    <div class="relative rounded-3xl bg-slate-900 text-slate-100 p-6 shadow-2xl border border-slate-800">
                         <!-- Window Dots -->
-                        <div class="flex items-center justify-between pb-4 border-b border-gray-800/80 mb-4">
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-4">
                             <div class="flex space-x-2">
-                                <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
-                                <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                                <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
                             </div>
-                            <span class="text-xs text-gray-500 font-mono">upb_ai_club.py</span>
+                            <span class="text-xs text-slate-400 font-mono">upb_ai_club.py</span>
                         </div>
                         <!-- Snippet -->
-                        <pre class="font-mono text-xs sm:text-sm text-gray-300 leading-relaxed overflow-x-auto">
-<span class="text-purple-400">import</span> torch
-<span class="text-purple-400">from</span> upb_ai <span class="text-purple-400">import</span> AcademicClub
+                        <pre class="font-mono text-xs sm:text-sm text-slate-300 leading-relaxed overflow-x-auto">
+<span class="text-emerald-400">import</span> torch
+<span class="text-emerald-400">from</span> upb_ai <span class="text-emerald-400">import</span> AcademicClub
 
-<span class="text-gray-500"># Inicializar club académico UPB</span>
+<span class="text-slate-500"># Inicializar club académico UPB</span>
 club = AcademicClub(
-    university=<span class="text-emerald-400">"UPB Medellín"</span>,
-    level=<span class="text-emerald-400">"Advanced AI & ML"</span>
+    university=<span class="text-amber-300">"UPB Medellín"</span>,
+    level=<span class="text-amber-300">"Advanced AI & ML"</span>
 )
 
-<span class="text-purple-400">def</span> <span class="text-blue-400">desarrollar_talento</span>(estudiante):
+<span class="text-emerald-400">def</span> <span class="text-blue-400">desarrollar_talento</span>(estudiante):
     model = club.load_knowledge()
-    skills = [<span class="text-emerald-400">"LLMs"</span>, <span class="text-emerald-400">"Vision"</span>, <span class="text-emerald-400">"Robotics"</span>]
-    <span class="text-purple-400">return</span> model.train(estudiante, skills)
+    skills = [<span class="text-amber-300">"LLMs"</span>, <span class="text-amber-300">"Vision"</span>, <span class="text-amber-300">"Robotics"</span>]
+    <span class="text-emerald-400">return</span> model.train(estudiante, skills)
 
-<span class="text-gray-500"># ¡Postúlate hoy mismo!</span>
-club.enroll_student(status=<span class="text-emerald-400">"Active"</span>)
+<span class="text-slate-500"># ¡Postúlate hoy mismo!</span>
+club.enroll_student(status=<span class="text-amber-300">"Active"</span>)
 </pre>
                         <!-- Badge inside card -->
-                        <div class="mt-6 pt-4 border-t border-gray-800 flex items-center justify-between text-xs text-gray-400">
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
                             <span class="flex items-center space-x-2">
-                                <i class="fa-solid fa-microchip text-red-500"></i>
+                                <i class="fa-solid fa-microchip text-emerald-400"></i>
                                 <span>PyTorch & Transformers</span>
                             </span>
-                            <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-check text-xs mr-1"></i>Cupos Abiertos</span>
+                            <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-circle-check text-xs mr-1"></i>Cupos Abiertos</span>
                         </div>
                     </div>
                 </div>
@@ -208,12 +237,12 @@ club.enroll_student(status=<span class="text-emerald-400">"Active"</span>)
     </section>
 
     <!-- About Section -->
-    <section id="acerca" class="py-20 bg-gray-950/60 border-y border-gray-800/60">
+    <section id="acerca" class="py-20 bg-white border-y border-slate-200/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs font-semibold uppercase tracking-widest text-red-500 mb-2">Propósito del Club</h2>
-                <p class="font-heading text-3xl sm:text-4xl font-extrabold text-white">Impulsando el ecosistema de IA en la UPB</p>
-                <p class="mt-4 text-gray-400 text-sm sm:text-base leading-relaxed">
+                <span class="px-4 py-1.5 rounded-full badge-pill text-xs font-bold uppercase tracking-wider inline-block mb-3">Propósito del Club</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900">Impulsando el ecosistema de IA en la UPB</h2>
+                <p class="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
                     Un espacio diseñado por y para la comunidad universitaria para aprender, investigar y crear soluciones basadas en inteligencia artificial aplicada a desafíos del mundo real.
                 </p>
             </div>
@@ -222,45 +251,45 @@ club.enroll_student(status=<span class="text-emerald-400">"Active"</span>)
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 
                 <!-- Pillar 1 -->
-                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 group">
-                    <div class="w-12 h-12 rounded-xl bg-red-950/50 border border-red-500/30 flex items-center justify-center text-red-400 mb-5 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-robot text-xl"></i>
+                <div class="p-8 rounded-3xl bg-[#F4F9F5] border border-slate-200/60 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-emerald-600 mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-robot text-2xl"></i>
                     </div>
-                    <h3 class="font-heading text-lg font-bold text-white mb-2">Machine Learning</h3>
-                    <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+                    <h3 class="font-heading text-xl font-bold text-slate-900 mb-3">Machine Learning</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
                         Fundamentos sólidos de aprendizaje supervisado, no supervisado y regresiones aplicadas.
                     </p>
                 </div>
 
                 <!-- Pillar 2 -->
-                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 group">
-                    <div class="w-12 h-12 rounded-xl bg-red-950/50 border border-red-500/30 flex items-center justify-center text-red-400 mb-5 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-network-wired text-xl"></i>
+                <div class="p-8 rounded-3xl bg-[#F4F9F5] border border-slate-200/60 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-emerald-600 mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-network-wired text-2xl"></i>
                     </div>
-                    <h3 class="font-heading text-lg font-bold text-white mb-2">Redes Neuronales</h3>
-                    <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+                    <h3 class="font-heading text-xl font-bold text-slate-900 mb-3">Redes Neuronales</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
                         Arquitectura de Deep Learning con PyTorch y TensorFlow para problemas complejos.
                     </p>
                 </div>
 
                 <!-- Pillar 3 -->
-                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 group">
-                    <div class="w-12 h-12 rounded-xl bg-red-950/50 border border-red-500/30 flex items-center justify-center text-red-400 mb-5 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-eye text-xl"></i>
+                <div class="p-8 rounded-3xl bg-[#F4F9F5] border border-slate-200/60 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-emerald-600 mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-eye text-2xl"></i>
                     </div>
-                    <h3 class="font-heading text-lg font-bold text-white mb-2">Visión por Computador</h3>
-                    <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+                    <h3 class="font-heading text-xl font-bold text-slate-900 mb-3">Visión por Computador</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
                         Procesamiento de imágenes, detección de objetos con YOLO y segmentación semántica.
                     </p>
                 </div>
 
                 <!-- Pillar 4 -->
-                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 group">
-                    <div class="w-12 h-12 rounded-xl bg-red-950/50 border border-red-500/30 flex items-center justify-center text-red-400 mb-5 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-comments text-xl"></i>
+                <div class="p-8 rounded-3xl bg-[#F4F9F5] border border-slate-200/60 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-emerald-600 mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-comments text-2xl"></i>
                     </div>
-                    <h3 class="font-heading text-lg font-bold text-white mb-2">IA Generativa & LLMs</h3>
-                    <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+                    <h3 class="font-heading text-xl font-bold text-slate-900 mb-3">IA Generativa & LLMs</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
                         Fine-tuning de modelos Transformers, sistemas RAG y agentes de inteligencia artificial.
                     </p>
                 </div>
@@ -269,168 +298,219 @@ club.enroll_student(status=<span class="text-emerald-400">"Active"</span>)
         </div>
     </section>
 
-    <!-- Integrantes / Team Section -->
-    <section id="integrantes" class="py-20 bg-gray-950/60 border-t border-gray-800/60">
+    <!-- Course Modules Section -->
+    <section id="temario" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs font-semibold uppercase tracking-widest text-red-500 mb-2">Comunidad Académica</h2>
-                <p class="font-heading text-3xl sm:text-4xl font-extrabold text-white">Integrantes del Club</p>
-                <p class="mt-4 text-gray-400 text-sm sm:text-base">Estudiantes e investigadores apasionados que lideran el desarrollo de la IA en la Universidad Pontificia Bolivariana.</p>
+                <span class="px-4 py-1.5 rounded-full badge-pill text-xs font-bold uppercase tracking-wider inline-block mb-3">Plan Académico</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900">Módulos del Curso</h2>
+                <p class="mt-4 text-slate-600 text-sm sm:text-base">Estructurado para llevarte desde los fundamentos hasta proyectos reales desplegados.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Module 1 -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+                    <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 font-extrabold text-sm flex items-center justify-center mb-6">01</div>
+                    <h3 class="font-heading text-xl font-bold text-slate-900 mb-3">Fundamentos & Data Science</h3>
+                    <ul class="space-y-3 text-xs sm:text-sm text-slate-600">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-600 mr-2.5"></i>Python para IA (NumPy, Pandas)</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-600 mr-2.5"></i>Álgebra Lineal & Cálculo en ML</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-600 mr-2.5"></i>Limpieza y Preprocesamiento de Datos</li>
+                    </ul>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="bg-white rounded-3xl p-8 border border-emerald-500/30 shadow-md relative overflow-hidden ring-2 ring-emerald-500/20">
+                    <div class="w-10 h-10 rounded-full bg-emerald-600 text-white font-extrabold text-sm flex items-center justify-center mb-6">02</div>
+                    <h3 class="font-heading text-xl font-bold text-slate-900 mb-3">Deep Learning & Vision</h3>
+                    <ul class="space-y-3 text-xs sm:text-sm text-slate-600">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-600 mr-2.5"></i>Redes Neuronales Convolucionales (CNN)</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-600 mr-2.5"></i>PyTorch Práctico & Transfer Learning</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-600 mr-2.5"></i>Visión con OpenCV & YOLOv8</li>
+                    </ul>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+                    <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 font-extrabold text-sm flex items-center justify-center mb-6">03</div>
+                    <h3 class="font-heading text-xl font-bold text-slate-900 mb-3">LLMs & Proyecto Capstone</h3>
+                    <ul class="space-y-3 text-xs sm:text-sm text-slate-600">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-600 mr-2.5"></i>Arquitectura Transformers & Hugging Face</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-600 mr-2.5"></i>Sistemas RAG & Vector Databases</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-600 mr-2.5"></i>Despliegue de Proyecto Final en Producción</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrantes / Team Section -->
+    <section id="integrantes" class="py-20 bg-white border-t border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="px-4 py-1.5 rounded-full badge-pill text-xs font-bold uppercase tracking-wider inline-block mb-3">Comunidad Académica</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900">Integrantes del Club</h2>
+                <p class="mt-4 text-slate-600 text-sm sm:text-base">Estudiantes e investigadores apasionados que lideran el desarrollo de la IA en la Universidad Pontificia Bolivariana.</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Member 1: Andres -->
-                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 text-center group flex flex-col justify-between">
+                <div class="p-6 rounded-3xl bg-[#F4F9F5] border border-slate-200/60 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center flex flex-col justify-between">
                     <div>
-                        <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-tr from-upb-red to-red-600 p-1 mb-4 shadow-lg group-hover:scale-105 transition-transform">
-                            <div class="w-full h-full rounded-full bg-gray-900 flex items-center justify-center text-red-400">
+                        <div class="w-20 h-20 mx-auto rounded-full bg-emerald-100 p-1 mb-4 flex items-center justify-center text-emerald-700 shadow-sm">
+                            <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
                                 <i class="fa-solid fa-user-astronaut text-2xl"></i>
                             </div>
                         </div>
-                        <h3 class="font-heading text-lg font-bold text-white mb-1">Andrés</h3>
-                        <p class="text-[11px] font-semibold text-red-400 uppercase tracking-wider mb-2">Investigación en LLMs</p>
-                        <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">Andrés</h3>
+                        <span class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold uppercase tracking-wider mb-3">Investigación en LLMs</span>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
                             Modelos de lenguaje natural, arquitecturas RAG y fine-tuning académico.
                         </p>
                     </div>
-                    <div class="flex justify-center space-x-3 text-gray-400 text-xs pt-2">
-                        <a href="#" class="hover:text-red-500 transition-colors"><i class="fa-brands fa-github"></i></a>
-                        <a href="#" class="hover:text-red-500 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                    <div class="flex justify-center space-x-3 text-slate-400 text-sm pt-2">
+                        <a href="#" class="hover:text-emerald-600 transition-colors"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="hover:text-emerald-600 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
                     </div>
                 </div>
 
                 <!-- Member 2: Ferney -->
-                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 text-center group flex flex-col justify-between">
+                <div class="p-6 rounded-3xl bg-[#F4F9F5] border border-slate-200/60 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center flex flex-col justify-between">
                     <div>
-                        <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-tr from-upb-red to-red-600 p-1 mb-4 shadow-lg group-hover:scale-105 transition-transform">
-                            <div class="w-full h-full rounded-full bg-gray-900 flex items-center justify-center text-red-400">
+                        <div class="w-20 h-20 mx-auto rounded-full bg-emerald-100 p-1 mb-4 flex items-center justify-center text-emerald-700 shadow-sm">
+                            <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
                                 <i class="fa-solid fa-brain text-2xl"></i>
                             </div>
                         </div>
-                        <h3 class="font-heading text-lg font-bold text-white mb-1">Ferney</h3>
-                        <p class="text-[11px] font-semibold text-red-400 uppercase tracking-wider mb-2">MLOps & Infraestructura</p>
-                        <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">Ferney</h3>
+                        <span class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold uppercase tracking-wider mb-3">MLOps & Infraestructura</span>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
                             Desarrollo PyTorch, contenedores Docker y cómputo GPU acelerado.
                         </p>
                     </div>
-                    <div class="flex justify-center space-x-3 text-gray-400 text-xs pt-2">
-                        <a href="#" class="hover:text-red-500 transition-colors"><i class="fa-brands fa-github"></i></a>
-                        <a href="#" class="hover:text-red-500 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                    <div class="flex justify-center space-x-3 text-slate-400 text-sm pt-2">
+                        <a href="#" class="hover:text-emerald-600 transition-colors"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="hover:text-emerald-600 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
                     </div>
                 </div>
 
                 <!-- Member 3: Angelica -->
-                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 text-center group flex flex-col justify-between">
+                <div class="p-6 rounded-3xl bg-[#F4F9F5] border border-slate-200/60 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center flex flex-col justify-between">
                     <div>
-                        <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-tr from-upb-red to-red-600 p-1 mb-4 shadow-lg group-hover:scale-105 transition-transform">
-                            <div class="w-full h-full rounded-full bg-gray-900 flex items-center justify-center text-red-400">
+                        <div class="w-20 h-20 mx-auto rounded-full bg-emerald-100 p-1 mb-4 flex items-center justify-center text-emerald-700 shadow-sm">
+                            <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
                                 <i class="fa-solid fa-eye text-2xl"></i>
                             </div>
                         </div>
-                        <h3 class="font-heading text-lg font-bold text-white mb-1">Angélica</h3>
-                        <p class="text-[11px] font-semibold text-red-400 uppercase tracking-wider mb-2">Visión por Computador</p>
-                        <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">Angélica</h3>
+                        <span class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold uppercase tracking-wider mb-3">Visión por Computador</span>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
                             Segmentación semántica y detección de objetos con OpenCV y YOLO.
                         </p>
                     </div>
-                    <div class="flex justify-center space-x-3 text-gray-400 text-xs pt-2">
-                        <a href="#" class="hover:text-red-500 transition-colors"><i class="fa-brands fa-github"></i></a>
-                        <a href="#" class="hover:text-red-500 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                    <div class="flex justify-center space-x-3 text-slate-400 text-sm pt-2">
+                        <a href="#" class="hover:text-emerald-600 transition-colors"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="hover:text-emerald-600 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
                     </div>
                 </div>
 
-                <!-- Placeholder 1: Miembro Vacante / Integrante 4 -->
-                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 text-center group flex flex-col justify-between">
+                <!-- Member 4: Juan Lopez -->
+                <div class="p-6 rounded-3xl bg-[#F4F9F5] border border-slate-200/60 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center flex flex-col justify-between">
                     <div>
-                        <div class="w-20 h-20 mx-auto rounded-full bg-gray-800 border-2 border-dashed border-red-500/50 p-1 mb-4 flex items-center justify-center group-hover:scale-105 transition-transform">
-                            <div class="w-full h-full rounded-full bg-gray-900/80 flex items-center justify-center text-gray-400">
-                                <i class="fa-solid fa-code text-2xl text-red-400"></i>
+                        <div class="w-20 h-20 mx-auto rounded-full bg-emerald-100 p-1 mb-4 flex items-center justify-center text-emerald-700 shadow-sm">
+                            <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
+                                <i class="fa-solid fa-code text-2xl"></i>
                             </div>
                         </div>
-                        <h3 class="font-heading text-lg font-bold text-white mb-1">Integrante Por Asignar</h3>
-                        <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-2">Procesamiento de Voz & Audio</p>
-                        <p class="text-gray-400 text-xs leading-relaxed mb-4">
-                            Modelos de reconocimiento de habla (Whisper) y síntesis de audio inteligente.
+                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">Juan López</h3>
+                        <span class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold uppercase tracking-wider mb-3">Desarrollo Software & IA</span>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            Integración de modelos en aplicaciones web y backend escalable.
                         </p>
                     </div>
-                    <div class="flex justify-center space-x-3 text-gray-500 text-xs pt-2">
-                        <span class="inline-flex items-center px-2 py-0.5 rounded bg-gray-800 text-[10px] text-red-300 border border-red-900/50">Cupo Disponible</span>
+                    <div class="flex justify-center space-x-3 text-slate-400 text-sm pt-2">
+                        <a href="#" class="hover:text-emerald-600 transition-colors"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="hover:text-emerald-600 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
                     </div>
                 </div>
 
-                <!-- Placeholder 2: Integrante 5 -->
-                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 text-center group flex flex-col justify-between">
+                <!-- Member 5: Camila Zuluaga -->
+                <div class="p-6 rounded-3xl bg-[#F4F9F5] border border-slate-200/60 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center flex flex-col justify-between">
                     <div>
-                        <div class="w-20 h-20 mx-auto rounded-full bg-gray-800 border-2 border-dashed border-red-500/50 p-1 mb-4 flex items-center justify-center group-hover:scale-105 transition-transform">
-                            <div class="w-full h-full rounded-full bg-gray-900/80 flex items-center justify-center text-gray-400">
-                                <i class="fa-solid fa-chart-line text-2xl text-red-400"></i>
+                        <div class="w-20 h-20 mx-auto rounded-full bg-emerald-100 p-1 mb-4 flex items-center justify-center text-emerald-700 shadow-sm">
+                            <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
+                                <i class="fa-solid fa-chart-line text-2xl"></i>
                             </div>
                         </div>
-                        <h3 class="font-heading text-lg font-bold text-white mb-1">Integrante Por Asignar</h3>
-                        <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-2">IA en Finanzas & Datos</p>
-                        <p class="text-gray-400 text-xs leading-relaxed mb-4">
-                            Predicción de series temporales, análisis cualitativo y finanzas cuantitativas.
+                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">Camila Zuluaga</h3>
+                        <span class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold uppercase tracking-wider mb-3">Ciencia de Datos</span>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            Análisis exploratorio, series de tiempo y modelos predictivos.
                         </p>
                     </div>
-                    <div class="flex justify-center space-x-3 text-gray-500 text-xs pt-2">
-                        <span class="inline-flex items-center px-2 py-0.5 rounded bg-gray-800 text-[10px] text-red-300 border border-red-900/50">Cupo Disponible</span>
+                    <div class="flex justify-center space-x-3 text-slate-400 text-sm pt-2">
+                        <a href="#" class="hover:text-emerald-600 transition-colors"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="hover:text-emerald-600 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
                     </div>
                 </div>
 
-                <!-- Placeholder 3: Integrante 6 -->
-                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 text-center group flex flex-col justify-between">
+                <!-- Member 6: Ana Perez -->
+                <div class="p-6 rounded-3xl bg-[#F4F9F5] border border-slate-200/60 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center flex flex-col justify-between">
                     <div>
-                        <div class="w-20 h-20 mx-auto rounded-full bg-gray-800 border-2 border-dashed border-red-500/50 p-1 mb-4 flex items-center justify-center group-hover:scale-105 transition-transform">
-                            <div class="w-full h-full rounded-full bg-gray-900/80 flex items-center justify-center text-gray-400">
-                                <i class="fa-solid fa-microchip text-2xl text-red-400"></i>
+                        <div class="w-20 h-20 mx-auto rounded-full bg-emerald-100 p-1 mb-4 flex items-center justify-center text-emerald-700 shadow-sm">
+                            <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
+                                <i class="fa-solid fa-[#059669] fa-wand-magic-sparkles text-2xl"></i>
                             </div>
                         </div>
-                        <h3 class="font-heading text-lg font-bold text-white mb-1">Integrante Por Asignar</h3>
-                        <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-2">Robótica & AI Edge</p>
-                        <p class="text-gray-400 text-xs leading-relaxed mb-4">
-                            Implementación de IA en microcontroladores (TinyML) y robótica autónoma.
+                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">Ana Pérez</h3>
+                        <span class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold uppercase tracking-wider mb-3">IA Generativa</span>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            Modelos de difusión, síntesis multimedia y creatividad computacional.
                         </p>
                     </div>
-                    <div class="flex justify-center space-x-3 text-gray-500 text-xs pt-2">
-                        <span class="inline-flex items-center px-2 py-0.5 rounded bg-gray-800 text-[10px] text-red-300 border border-red-900/50">Cupo Disponible</span>
+                    <div class="flex justify-center space-x-3 text-slate-400 text-sm pt-2">
+                        <a href="#" class="hover:text-emerald-600 transition-colors"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="hover:text-emerald-600 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
                     </div>
                 </div>
 
-                <!-- Placeholder 4: Integrante 7 -->
-                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 text-center group flex flex-col justify-between">
+                <!-- Member 7: Jorge Amaya -->
+                <div class="p-6 rounded-3xl bg-[#F4F9F5] border border-slate-200/60 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center flex flex-col justify-between">
                     <div>
-                        <div class="w-20 h-20 mx-auto rounded-full bg-gray-800 border-2 border-dashed border-red-500/50 p-1 mb-4 flex items-center justify-center group-hover:scale-105 transition-transform">
-                            <div class="w-full h-full rounded-full bg-gray-900/80 flex items-center justify-center text-gray-400">
-                                <i class="fa-solid fa-scale-balanced text-2xl text-red-400"></i>
+                        <div class="w-20 h-20 mx-auto rounded-full bg-emerald-100 p-1 mb-4 flex items-center justify-center text-emerald-700 shadow-sm">
+                            <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
+                                <i class="fa-solid fa-microchip text-2xl"></i>
                             </div>
                         </div>
-                        <h3 class="font-heading text-lg font-bold text-white mb-1">Integrante Por Asignar</h3>
-                        <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-2">Ética & Gobernanza de IA</p>
-                        <p class="text-gray-400 text-xs leading-relaxed mb-4">
-                            Evaluación de sesgos algorítmicos, transparencia e impacto ético-social.
+                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">Jorge Amaya</h3>
+                        <span class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold uppercase tracking-wider mb-3">Robótica & TinyML</span>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            Optimizaciones de modelos en sistemas embebidos y hardware Edge.
                         </p>
                     </div>
-                    <div class="flex justify-center space-x-3 text-gray-500 text-xs pt-2">
-                        <span class="inline-flex items-center px-2 py-0.5 rounded bg-gray-800 text-[10px] text-red-300 border border-red-900/50">Cupo Disponible</span>
+                    <div class="flex justify-center space-x-3 text-slate-400 text-sm pt-2">
+                        <a href="#" class="hover:text-emerald-600 transition-colors"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="hover:text-emerald-600 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
                     </div>
                 </div>
 
-                <!-- Placeholder 5: Integrante 8 -->
-                <div class="p-6 rounded-2xl bg-upb-card border border-gray-800 hover:border-red-500/40 transition-all duration-300 text-center group flex flex-col justify-between">
+                <!-- Member 8: Federico Restrepo -->
+                <div class="p-6 rounded-3xl bg-[#F4F9F5] border border-slate-200/60 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center flex flex-col justify-between">
                     <div>
-                        <div class="w-20 h-20 mx-auto rounded-full bg-gray-800 border-2 border-dashed border-red-500/50 p-1 mb-4 flex items-center justify-center group-hover:scale-105 transition-transform">
-                            <div class="w-full h-full rounded-full bg-gray-900/80 flex items-center justify-center text-gray-400">
-                                <i class="fa-solid fa-wand-magic-sparkles text-2xl text-red-400"></i>
+                        <div class="w-20 h-20 mx-auto rounded-full bg-emerald-100 p-1 mb-4 flex items-center justify-center text-emerald-700 shadow-sm">
+                            <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
+                                <i class="fa-solid fa-scale-balanced text-2xl"></i>
                             </div>
                         </div>
-                        <h3 class="font-heading text-lg font-bold text-white mb-1">Integrante Por Asignar</h3>
-                        <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-2">IA Generativa & Arte Digital</p>
-                        <p class="text-gray-400 text-xs leading-relaxed mb-4">
-                            Modelos de difusión, síntesis multimodal y herramientas de creatividad asistida.
+                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">Federico Restrepo</h3>
+                        <span class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold uppercase tracking-wider mb-3">Ética & Gobernanza de IA</span>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            Investigación en equidad de modelos, transparencia y regulaciones.
                         </p>
                     </div>
-                    <div class="flex justify-center space-x-3 text-gray-500 text-xs pt-2">
-                        <span class="inline-flex items-center px-2 py-0.5 rounded bg-gray-800 text-[10px] text-red-300 border border-red-900/50">Cupo Disponible</span>
+                    <div class="flex justify-center space-x-3 text-slate-400 text-sm pt-2">
+                        <a href="#" class="hover:text-emerald-600 transition-colors"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="hover:text-emerald-600 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
                     </div>
                 </div>
 
@@ -439,47 +519,47 @@ club.enroll_student(status=<span class="text-emerald-400">"Active"</span>)
     </section>
 
     <!-- Schedule & Location Section -->
-    <section id="horarios" class="py-20 bg-gray-950/60 border-t border-gray-800/60">
+    <section id="horarios" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-12 gap-10 items-center">
                 
                 <div class="lg:col-span-5 space-y-6">
                     <div>
-                        <h2 class="text-xs font-semibold uppercase tracking-widest text-red-500 mb-2">Logística Presencial</h2>
-                        <p class="font-heading text-3xl font-extrabold text-white">Horarios y Ubicación</p>
+                        <span class="px-4 py-1.5 rounded-full badge-pill text-xs font-bold uppercase tracking-wider inline-block mb-3">Logística Presencial</span>
+                        <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900">Horarios y Ubicación</h2>
                     </div>
-                    <p class="text-gray-400 text-sm leading-relaxed">
+                    <p class="text-slate-600 text-sm leading-relaxed">
                         Las clases y talleres del club se realizan de manera presencial en el Campus Laureles de la UPB, contando con equipos de alto rendimiento.
                     </p>
 
                     <div class="space-y-4">
-                        <div class="flex items-start space-x-4 p-4 rounded-xl bg-upb-card border border-gray-800">
-                            <div class="w-10 h-10 rounded-lg bg-red-950/60 border border-red-500/30 flex items-center justify-center text-red-400 shrink-0">
-                                <i class="fa-solid fa-location-dot"></i>
+                        <div class="flex items-start space-x-4 p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm">
+                            <div class="w-11 h-11 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-700 shrink-0">
+                                <i class="fa-solid fa-location-dot text-lg"></i>
                             </div>
                             <div>
-                                <h4 class="text-white font-semibold text-sm">Lugar</h4>
-                                <p class="text-gray-400 text-xs mt-0.5">Campus Laureles - Bloque 11 / Laboratorio de Informática 302</p>
+                                <h4 class="text-slate-900 font-bold text-sm">Lugar</h4>
+                                <p class="text-slate-500 text-xs mt-0.5">Campus Laureles - Bloque 11 / Laboratorio de Informática 302</p>
                             </div>
                         </div>
 
-                        <div class="flex items-start space-x-4 p-4 rounded-xl bg-upb-card border border-gray-800">
-                            <div class="w-10 h-10 rounded-lg bg-red-950/60 border border-red-500/30 flex items-center justify-center text-red-400 shrink-0">
-                                <i class="fa-solid fa-calendar-days"></i>
+                        <div class="flex items-start space-x-4 p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm">
+                            <div class="w-11 h-11 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-700 shrink-0">
+                                <i class="fa-solid fa-calendar-days text-lg"></i>
                             </div>
                             <div>
-                                <h4 class="text-white font-semibold text-sm">Horario</h4>
-                                <p class="text-gray-400 text-xs mt-0.5">Miércoles: 4:00 PM - 6:00 PM | Sábados: 10:00 AM - 12:00 PM</p>
+                                <h4 class="text-slate-900 font-bold text-sm">Horario</h4>
+                                <p class="text-slate-500 text-xs mt-0.5">Miércoles: 4:00 PM - 6:00 PM | Sábados: 10:00 AM - 12:00 PM</p>
                             </div>
                         </div>
 
-                        <div class="flex items-start space-x-4 p-4 rounded-xl bg-upb-card border border-gray-800">
-                            <div class="w-10 h-10 rounded-lg bg-red-950/60 border border-red-500/30 flex items-center justify-center text-red-400 shrink-0">
-                                <i class="fa-solid fa-graduation-cap"></i>
+                        <div class="flex items-start space-x-4 p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm">
+                            <div class="w-11 h-11 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-700 shrink-0">
+                                <i class="fa-solid fa-graduation-cap text-lg"></i>
                             </div>
                             <div>
-                                <h4 class="text-white font-semibold text-sm">Dirigido a</h4>
-                                <p class="text-gray-400 text-xs mt-0.5">Estudiantes de Pregrado y Posgrado UPB (Todas las facultades)</p>
+                                <h4 class="text-slate-900 font-bold text-sm">Dirigido a</h4>
+                                <p class="text-slate-500 text-xs mt-0.5">Estudiantes de Pregrado y Posgrado UPB (Todas las facultades)</p>
                             </div>
                         </div>
                     </div>
@@ -487,22 +567,22 @@ club.enroll_student(status=<span class="text-emerald-400">"Active"</span>)
 
                 <!-- Info Map / Graphic Card -->
                 <div class="lg:col-span-7">
-                    <div class="rounded-2xl bg-upb-card border border-gray-800 p-6 relative overflow-hidden">
-                        <div class="flex items-center justify-between pb-4 mb-4 border-b border-gray-800">
-                            <span class="text-sm font-semibold text-white"><i class="fa-solid fa-building-columns text-red-500 mr-2"></i>Campus Laureles, Medellín</span>
-                            <span class="text-xs text-gray-400">UPB Colombia</span>
+                    <div class="rounded-3xl bg-white border border-slate-200 p-8 shadow-lg relative overflow-hidden">
+                        <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-100">
+                            <span class="text-sm font-bold text-slate-800"><i class="fa-solid fa-building-columns text-emerald-600 mr-2"></i>Campus Laureles, Medellín</span>
+                            <span class="text-xs text-slate-400 font-semibold uppercase">UPB Colombia</span>
                         </div>
                         
-                        <div class="bg-gray-900 rounded-xl p-8 text-center border border-gray-800/80 space-y-4">
-                            <div class="w-16 h-16 mx-auto rounded-full bg-red-900/30 border border-red-500/40 flex items-center justify-center text-red-500">
+                        <div class="bg-[#F4F9F5] rounded-2xl p-8 text-center border border-emerald-100 space-y-4">
+                            <div class="w-16 h-16 mx-auto rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 shadow-sm">
                                 <i class="fa-solid fa-map-location-dot text-2xl"></i>
                             </div>
-                            <h3 class="text-lg font-bold text-white">Laboratorio de Inteligencia Artificial & Robótica</h3>
-                            <p class="text-xs text-gray-400 max-w-md mx-auto">
+                            <h3 class="text-lg font-bold text-slate-900">Laboratorio de Inteligencia Artificial & Robótica</h3>
+                            <p class="text-xs text-slate-600 max-w-md mx-auto leading-relaxed">
                                 Equipado con GPUs NVIDIA RTX, acceso a cluster académico y estaciones de desarrollo dedicadas para los miembros del club.
                             </p>
-                            <div class="inline-flex items-center space-x-2 text-xs text-emerald-400 bg-emerald-950/50 px-3 py-1.5 rounded-full border border-emerald-800/40">
-                                <i class="fa-solid fa-wifi"></i>
+                            <div class="inline-flex items-center space-x-2 text-xs text-emerald-800 bg-emerald-100 px-4 py-2 rounded-full font-semibold">
+                                <i class="fa-solid fa-wifi text-emerald-600"></i>
                                 <span>Red de Alta Velocidad UPB Garantizada</span>
                             </div>
                         </div>
@@ -514,22 +594,19 @@ club.enroll_student(status=<span class="text-emerald-400">"Active"</span>)
     </section>
 
     <!-- Registration Form Section -->
-    <section id="inscripcion" class="py-20 relative">
-        <!-- Glow -->
-        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-upb-red/10 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
-
+    <section id="inscripcion" class="py-20 relative bg-white border-t border-slate-200/80">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-upb-card border border-gray-800 rounded-3xl p-6 sm:p-10 shadow-2xl relative">
+            <div class="bg-[#F4F9F5] border border-slate-200/80 rounded-3xl p-6 sm:p-12 shadow-xl relative">
                 
                 <div class="text-center max-w-2xl mx-auto mb-10">
-                    <span class="text-xs font-semibold uppercase tracking-widest text-red-500">Formulario de Postulación</span>
-                    <h2 class="font-heading text-3xl font-extrabold text-white mt-1">Inscríbete al Club de IA</h2>
-                    <p class="text-gray-400 text-sm mt-2">Completa tus datos para reservar tu cupo en el semestre académico actual.</p>
+                    <span class="px-4 py-1.5 rounded-full badge-pill text-xs font-bold uppercase tracking-wider inline-block mb-2">Formulario de Postulación</span>
+                    <h2 class="font-heading text-3xl font-extrabold text-slate-900">Inscríbete al Club de IA</h2>
+                    <p class="text-slate-600 text-sm mt-2">Completa tus datos para reservar tu cupo en el semestre académico actual.</p>
                 </div>
 
                 <!-- Alert Message Box (Hidden by default) -->
-                <div id="form-alert" class="hidden mb-6 p-4 rounded-xl bg-emerald-950/80 border border-emerald-500/50 text-emerald-300 text-sm text-center">
-                    <i class="fa-solid fa-circle-check mr-2"></i>
+                <div id="form-alert" class="hidden mb-6 p-4 rounded-2xl bg-emerald-100 border border-emerald-300 text-emerald-900 text-sm text-center font-medium">
+                    <i class="fa-solid fa-circle-check mr-2 text-emerald-600"></i>
                     <span>¡Postulación enviada con éxito! Te contactaremos a tu correo institucional UPB.</span>
                 </div>
 
@@ -537,34 +614,34 @@ club.enroll_student(status=<span class="text-emerald-400">"Active"</span>)
                     <div class="grid sm:grid-cols-2 gap-6">
                         <!-- Full Name -->
                         <div>
-                            <label class="block text-xs font-medium text-gray-300 mb-2">Nombre Completo *</label>
-                            <input type="text" required placeholder="Ej. Mateo Valencia" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-red-500 transition-colors">
+                            <label class="block text-xs font-bold text-slate-700 mb-2">Nombre Completo *</label>
+                            <input type="text" required placeholder="Ej. Mateo Valencia" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 transition-all">
                         </div>
                         <!-- Student ID / ID -->
                         <div>
-                            <label class="block text-xs font-medium text-gray-300 mb-2">ID Estudiantil / Cédula *</label>
-                            <input type="text" required placeholder="000123456" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-red-500 transition-colors">
+                            <label class="block text-xs font-bold text-slate-700 mb-2">ID Estudiantil / Cédula *</label>
+                            <input type="text" required placeholder="000123456" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 transition-all">
                         </div>
                     </div>
 
                     <div class="grid sm:grid-cols-2 gap-6">
                         <!-- UPB Email -->
                         <div>
-                            <label class="block text-xs font-medium text-gray-300 mb-2">Correo Institucional (@upb.edu.co) *</label>
-                            <input type="email" required placeholder="usuario@upb.edu.co" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-red-500 transition-colors">
+                            <label class="block text-xs font-bold text-slate-700 mb-2">Correo Institucional (@upb.edu.co) *</label>
+                            <input type="email" required placeholder="usuario@upb.edu.co" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 transition-all">
                         </div>
                         <!-- Academic Faculty / Program -->
                         <div>
-                            <label class="block text-xs font-medium text-gray-300 mb-2">Carrera / Programa Académico *</label>
-                            <input type="text" required placeholder="Ej. Ing. de Sistemas, Diseño, Medicina..." class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-red-500 transition-colors">
+                            <label class="block text-xs font-bold text-slate-700 mb-2">Carrera / Programa Académico *</label>
+                            <input type="text" required placeholder="Ej. Ing. de Sistemas, Diseño..." class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 transition-all">
                         </div>
                     </div>
 
                     <div class="grid sm:grid-cols-2 gap-6">
                         <!-- Academic Semester -->
                         <div>
-                            <label class="block text-xs font-medium text-gray-300 mb-2">Semestre Actual *</label>
-                            <select required class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-red-500 transition-colors">
+                            <label class="block text-xs font-bold text-slate-700 mb-2">Semestre Actual *</label>
+                            <select required class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 transition-all">
                                 <option value="" disabled selected>Selecciona tu semestre</option>
                                 <option value="1-3">1° - 3° Semestre</option>
                                 <option value="4-6">4° - 6° Semestre</option>
@@ -574,8 +651,8 @@ club.enroll_student(status=<span class="text-emerald-400">"Active"</span>)
                         </div>
                         <!-- Programming Level -->
                         <div>
-                            <label class="block text-xs font-medium text-gray-300 mb-2">Nivel en Python / Programación *</label>
-                            <select required class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-red-500 transition-colors">
+                            <label class="block text-xs font-bold text-slate-700 mb-2">Nivel en Python / Programación *</label>
+                            <select required class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 transition-all">
                                 <option value="" disabled selected>Selecciona tu nivel</option>
                                 <option value="principiante">Principiante (Sin experiencia previa)</option>
                                 <option value="intermedio">Intermedio (Conozco sintaxis básica)</option>
@@ -586,17 +663,17 @@ club.enroll_student(status=<span class="text-emerald-400">"Active"</span>)
 
                     <!-- Motivation -->
                     <div>
-                        <label class="block text-xs font-medium text-gray-300 mb-2">¿Por qué quieres unirte al AI Club UPB?</label>
-                        <textarea rows="3" placeholder="Cuéntanos brevemente tus metas o intereses..." class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-red-500 transition-colors resize-none"></textarea>
+                        <label class="block text-xs font-bold text-slate-700 mb-2">¿Por qué quieres unirte al AI Club UPB?</label>
+                        <textarea rows="3" placeholder="Cuéntanos brevemente tus metas o intereses..." class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 transition-all resize-none"></textarea>
                     </div>
 
                     <!-- Submit Button -->
-                    <button type="submit" class="w-full gradient-upb hover:brightness-125 text-white font-bold py-4 rounded-xl shadow-xl hover:shadow-red-900/40 transition-all duration-200 flex items-center justify-center space-x-2">
+                    <button type="submit" class="w-full emerald-gradient-btn text-white font-bold py-4 rounded-full shadow-lg shadow-emerald-600/25 transition-all duration-200 flex items-center justify-center space-x-2 transform hover:-translate-y-0.5">
                         <i class="fa-solid fa-paper-plane text-sm"></i>
                         <span>Enviar Postulación</span>
                     </button>
 
-                    <p class="text-center text-xs text-gray-500">
+                    <p class="text-center text-xs text-slate-500">
                         * Cupos limitados por capacidad de laboratorio. Selección sujeta a confirmación por correo.
                     </p>
                 </form>
@@ -606,43 +683,43 @@ club.enroll_student(status=<span class="text-emerald-400">"Active"</span>)
     </section>
 
     <!-- FAQs Section -->
-    <section id="faqs" class="py-20 bg-gray-950/60 border-t border-gray-800/60">
+    <section id="faqs" class="py-20">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-14">
-                <h2 class="text-xs font-semibold uppercase tracking-widest text-red-500 mb-2">Resolvemos tus dudas</h2>
-                <p class="font-heading text-3xl font-extrabold text-white">Preguntas Frecuentes</p>
+                <span class="px-4 py-1.5 rounded-full badge-pill text-xs font-bold uppercase tracking-wider inline-block mb-2">Resolvemos tus dudas</span>
+                <h2 class="font-heading text-3xl font-extrabold text-slate-900">Preguntas Frecuentes</h2>
             </div>
 
             <div class="space-y-4">
                 <!-- FAQ 1 -->
-                <div class="bg-upb-card border border-gray-800 rounded-xl p-5">
-                    <h4 class="text-white font-semibold text-base mb-2 flex items-center">
-                        <i class="fa-solid fa-circle-question text-red-500 mr-3"></i>
+                <div class="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm">
+                    <h4 class="text-slate-900 font-bold text-base mb-2 flex items-center">
+                        <i class="fa-solid fa-circle-question text-emerald-600 mr-3"></i>
                         ¿El club tiene algún costo de inscripción?
                     </h4>
-                    <p class="text-gray-400 text-sm pl-7">
+                    <p class="text-slate-600 text-sm pl-7 leading-relaxed">
                         No. El AI Club UPB es una iniciativa totalmente gratuita respaldada por la Universidad Pontificia Bolivariana para sus estudiantes activos.
                     </p>
                 </div>
 
                 <!-- FAQ 2 -->
-                <div class="bg-upb-card border border-gray-800 rounded-xl p-5">
-                    <h4 class="text-white font-semibold text-base mb-2 flex items-center">
-                        <i class="fa-solid fa-circle-question text-red-500 mr-3"></i>
+                <div class="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm">
+                    <h4 class="text-slate-900 font-bold text-base mb-2 flex items-center">
+                        <i class="fa-solid fa-circle-question text-emerald-600 mr-3"></i>
                         ¿Necesito ser estudiante de Ingeniería de Sistemas?
                     </h4>
-                    <p class="text-gray-400 text-sm pl-7">
+                    <p class="text-slate-600 text-sm pl-7 leading-relaxed">
                         No. El club es interdisciplinario y recibe a estudiantes de cualquier facultad (Diseño, Medicina, Administración, Derecho, etc.) apasionados por la tecnología.
                     </p>
                 </div>
 
                 <!-- FAQ 3 -->
-                <div class="bg-upb-card border border-gray-800 rounded-xl p-5">
-                    <h4 class="text-white font-semibold text-base mb-2 flex items-center">
-                        <i class="fa-solid fa-circle-question text-red-500 mr-3"></i>
+                <div class="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm">
+                    <h4 class="text-slate-900 font-bold text-base mb-2 flex items-center">
+                        <i class="fa-solid fa-circle-question text-emerald-600 mr-3"></i>
                         ¿Se entrega certificado al finalizar?
                     </h4>
-                    <p class="text-gray-400 text-sm pl-7">
+                    <p class="text-slate-600 text-sm pl-7 leading-relaxed">
                         Sí, se otorga una certificación de participación respaldada por la facultad tras cumplir con el 80% de asistencia y la entrega del proyecto capstone final.
                     </p>
                 </div>
@@ -651,18 +728,18 @@ club.enroll_student(status=<span class="text-emerald-400">"Active"</span>)
     </section>
 
     <!-- Footer -->
-    <footer class="bg-upb-dark border-t border-gray-800 py-12 text-gray-400 text-sm">
+    <footer class="bg-slate-900 border-t border-slate-800 py-12 text-slate-400 text-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 
                 <div class="md:col-span-2 space-y-4">
                     <div class="flex items-center space-x-3">
-                        <div class="w-8 h-8 rounded-lg gradient-upb flex items-center justify-center">
-                            <i class="fa-solid fa-brain text-white text-sm"></i>
+                        <div class="w-9 h-9 rounded-xl bg-emerald-600 flex items-center justify-center text-white">
+                            <i class="fa-solid fa-brain text-sm"></i>
                         </div>
-                        <span class="font-heading font-bold text-lg text-white">AI CLUB UPB</span>
+                        <span class="font-heading font-extrabold text-lg text-white">AI CLUB UPB</span>
                     </div>
-                    <p class="text-xs text-gray-400 max-w-sm leading-relaxed">
+                    <p class="text-xs text-slate-400 max-w-sm leading-relaxed">
                         Universidad Pontificia Bolivariana<br>
                         Circular 1ª 70-01, Campus Laureles<br>
                         Medellín, Colombia
@@ -670,34 +747,34 @@ club.enroll_student(status=<span class="text-emerald-400">"Active"</span>)
                 </div>
 
                 <div>
-                    <h5 class="text-white font-semibold text-xs uppercase tracking-wider mb-3">Navegación</h5>
+                    <h5 class="text-white font-bold text-xs uppercase tracking-wider mb-3">Navegación</h5>
                     <ul class="space-y-2 text-xs">
-                        <li><a href="#inicio" class="hover:text-white transition-colors">Inicio</a></li>
-                        <li><a href="#acerca" class="hover:text-white transition-colors">Sobre Nosotros</a></li>
-                        <li><a href="#integrantes" class="hover:text-white transition-colors">Integrantes</a></li>
-                        <li><a href="#temario" class="hover:text-white transition-colors">Módulos del Curso</a></li>
-                        <li><a href="#inscripcion" class="hover:text-white transition-colors">Inscripciones</a></li>
+                        <li><a href="#inicio" class="hover:text-emerald-400 transition-colors">Inicio</a></li>
+                        <li><a href="#acerca" class="hover:text-emerald-400 transition-colors">Sobre Nosotros</a></li>
+                        <li><a href="#integrantes" class="hover:text-emerald-400 transition-colors">Integrantes</a></li>
+                        <li><a href="#temario" class="hover:text-emerald-400 transition-colors">Módulos del Curso</a></li>
+                        <li><a href="#inscripcion" class="hover:text-emerald-400 transition-colors">Inscripciones</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h5 class="text-white font-semibold text-xs uppercase tracking-wider mb-3">Contacto</h5>
+                    <h5 class="text-white font-bold text-xs uppercase tracking-wider mb-3">Contacto</h5>
                     <ul class="space-y-2 text-xs">
-                        <li class="flex items-center"><i class="fa-solid fa-envelope text-red-500 mr-2"></i>aiclub@upb.edu.co</li>
-                        <li class="flex items-center"><i class="fa-solid fa-globe text-red-500 mr-2"></i>www.upb.edu.co</li>
-                        <li class="flex items-center space-x-3 pt-2">
-                            <a href="#" class="w-8 h-8 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center hover:text-white hover:border-red-500 transition-all"><i class="fa-brands fa-github text-xs"></i></a>
-                            <a href="#" class="w-8 h-8 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center hover:text-white hover:border-red-500 transition-all"><i class="fa-brands fa-linkedin text-xs"></i></a>
-                            <a href="#" class="w-8 h-8 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center hover:text-white hover:border-red-500 transition-all"><i class="fa-brands fa-discord text-xs"></i></a>
+                        <li class="flex items-center"><i class="fa-solid fa-envelope text-emerald-500 mr-2"></i>aiclub@upb.edu.co</li>
+                        <li class="flex items-center"><i class="fa-solid fa-globe text-emerald-500 mr-2"></i>www.upb.edu.co</li>
+                        <li class="flex items-center space-x-3 pt-3">
+                            <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-emerald-600 hover:text-white transition-all"><i class="fa-brands fa-github text-xs"></i></a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-emerald-600 hover:text-white transition-all"><i class="fa-brands fa-linkedin text-xs"></i></a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-emerald-600 hover:text-white transition-all"><i class="fa-brands fa-discord text-xs"></i></a>
                         </li>
                     </ul>
                 </div>
 
             </div>
 
-            <div class="pt-8 border-t border-gray-800/60 text-center text-xs text-gray-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
                 <p>&copy; 2026 AI Club Universidad Pontificia Bolivariana. Todos los derechos reservados.</p>
-                <p class="text-gray-600">Diseñado para la Comunidad Académica UPB</p>
+                <p class="text-slate-400 font-medium">Diseñado para la Comunidad Académica UPB</p>
             </div>
         </div>
     </footer>
